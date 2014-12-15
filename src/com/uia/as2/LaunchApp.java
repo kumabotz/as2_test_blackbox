@@ -1,12 +1,11 @@
-package com.uia.example.my;
+package com.uia.as2;
 
 import com.android.uiautomator.core.UiObject;
 import com.android.uiautomator.core.UiObjectNotFoundException;
-import com.android.uiautomator.core.UiScrollable;
 import com.android.uiautomator.core.UiSelector;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
-public class LaunchSettings extends UiAutomatorTestCase {
+public class LaunchApp extends UiAutomatorTestCase {
     public void testDemo() throws UiObjectNotFoundException {
         // simulate a short press on the HOME button
         getUiDevice().pressHome();
@@ -47,12 +46,12 @@ public class LaunchSettings extends UiAutomatorTestCase {
         // .getChildByText(new UiSelector()
         // .className(android.widget.TextView.class.getName()),
         // "Settings");
-        UiObject settingsApp = new UiObject(new UiSelector().text("Settings"));
-        settingsApp.clickAndWaitForNewWindow();
+        UiObject testApp = new UiObject(new UiSelector().text("AutoSync2 Free"));
+        testApp.clickAndWaitForNewWindow();
 
         // validate the package name is the expected one
-        UiObject settingsValidation = new UiObject(
-                new UiSelector().packageName("com.android.settings"));
-        assertTrue("Unable to detect Settings", settingsValidation.exists());
+        UiObject appValidation = new UiObject(
+                new UiSelector().packageName("com.smallmachine.autosync2"));
+        assertTrue("Unable to detect Auto Sync 2", appValidation.exists());
     }
 }
