@@ -7,6 +7,7 @@ import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.core.UiSelector;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
+// TODO: handle device navigation
 public class App extends UiAutomatorTestCase {
     protected void setUp() throws Exception {
         super.setUp();
