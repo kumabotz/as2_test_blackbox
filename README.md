@@ -7,9 +7,8 @@
 
 ### Create the build file
 ```
-<android-sdk>/tools/android create uitest-project -n <name> -t 1 -p <path>
+<android-sdk>/tools/android create uitest-project -n as2_uia -t 1 -p .
 ```
-The \<name\> is the name of the project that contains your uiautomator test source files, and the \<path\> is the path to the corresponding project directory.
 
 ### Building and Deploying Your uiautomator Tests
 In the project directory, with android device connected, run command below:
