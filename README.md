@@ -1,4 +1,4 @@
-# as2_test_blackbox
+# as2_uiautomator
 
 ### Identify the application’s UI components
 ```
@@ -14,7 +14,7 @@ The \<name\> is the name of the project that contains your uiautomator test sour
 ### Building and Deploying Your uiautomator Tests
 In the project directory, with android device connected, run command below:
 ``` zsh
-ant build && adb push bin/as2_bbt.jar /data/local/tmp/ && adb shell uiautomator runtest as2_bbt.jar
+ant build && adb push bin/as2_uia.jar /data/local/tmp/ && adb shell uiautomator runtest as2_uia.jar
 ```
 
 ### Reference
