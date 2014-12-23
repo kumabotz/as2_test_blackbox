@@ -8,10 +8,10 @@ import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.core.UiSelector;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
-public class XiaoMi extends UiAutomatorTestCase implements Device {
+public class XiaoMiDevice extends UiAutomatorTestCase implements Device {
     private final UiDevice mUiDevice;
 
-    public XiaoMi() {
+    public XiaoMiDevice() {
         mUiDevice = UiDevice.getInstance();
     }
 

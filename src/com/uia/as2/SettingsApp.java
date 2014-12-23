@@ -6,6 +6,7 @@ import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.core.UiSelector;
 
 public class SettingsApp extends App {
+    @Override
     protected void setUp() throws Exception {
         super.setUp();
         new UiObject(new UiSelector().description("More options")).clickAndWaitForNewWindow();
