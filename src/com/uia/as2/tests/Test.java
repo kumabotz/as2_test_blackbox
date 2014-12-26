@@ -5,13 +5,15 @@ import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.core.UiSelector;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 import com.uia.as2.tests.devices.Device;
+import com.uia.as2.tests.devices.DeviceFactory;
 
 public class Test extends UiAutomatorTestCase {
     private Device mDevice;
 
     public Test() {
         try {
-            mDevice = (Device) Class.forName(getDeviceImplClass()).newInstance();
+            // NOTE: this syntax is needed to make it works and i don't know why
+            mDevice = DeviceFactory.getDevice(getUiDevice().getInstance().getProductName());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -32,18 +34,5 @@ public class Test extends UiAutomatorTestCase {
     void launchApp() throws UiObjectNotFoundException {
         getUiDevice().pressHome();
         new UiObject(new UiSelector().text("AutoSync2 Free")).clickAndWaitForNewWindow();
-    }
-
-    String getDeviceImplClass() {
-        // NOTE: this syntax is needed to make it works and i don't know why
-        String productName = getUiDevice().getInstance().getProductName();
-
-        if (productName.equals("cancro")) {
-            return "com.uia.as2.tests.devices.XiaoMiDevice";
-        } else if (productName.equals("vbox86p")) {
-            return "com.uia.as2.tests.devices.Nexus5Device";
-        }
-
-        return "com.uia.as2.tests.devices.Nexus5Device";
     }
 }

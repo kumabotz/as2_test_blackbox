@@ -8,17 +8,17 @@ import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.core.UiSelector;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
-public class Nexus5Device extends UiAutomatorTestCase implements Device {
+public class XiaoMi extends UiAutomatorTestCase implements Device {
     private final UiDevice mUiDevice;
 
-    public Nexus5Device() {
+    public XiaoMi() {
         mUiDevice = UiDevice.getInstance();
     }
 
-    @Override
     public void exitApp() throws RemoteException, UiObjectNotFoundException {
+        mUiDevice.pressHome();
         mUiDevice.pressRecentApps();
-        new UiObject(new UiSelector().resourceId("com.android.systemui:id/app_thumbnail"))
-                .swipeRight(5);
+        sleep(1000);
+        new UiObject(new UiSelector().text("AutoSync2 Free")).swipeUp(40);
     }
 }
