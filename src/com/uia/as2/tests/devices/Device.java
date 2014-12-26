@@ -1,4 +1,4 @@
-package com.uia.as2.devices;
+package com.uia.as2.tests.devices;
 
 import com.android.uiautomator.core.UiObjectNotFoundException;
 

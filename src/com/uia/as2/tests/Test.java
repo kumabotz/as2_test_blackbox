@@ -1,15 +1,15 @@
-package com.uia.as2;
+package com.uia.as2.tests;
 
 import com.android.uiautomator.core.UiObject;
 import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.core.UiSelector;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
-import com.uia.as2.devices.Device;
+import com.uia.as2.tests.devices.Device;
 
-public class App extends UiAutomatorTestCase {
+public class Test extends UiAutomatorTestCase {
     private Device mDevice;
 
-    public App() {
+    public Test() {
         try {
             mDevice = (Device) Class.forName(getDeviceImplClass()).newInstance();
         } catch (Exception e) {
@@ -39,11 +39,11 @@ public class App extends UiAutomatorTestCase {
         String productName = getUiDevice().getInstance().getProductName();
 
         if (productName.equals("cancro")) {
-            return "com.uia.as2.devices.XiaoMiDevice";
+            return "com.uia.as2.tests.devices.XiaoMiDevice";
         } else if (productName.equals("vbox86p")) {
-            return "com.uia.as2.devices.Nexus5Device";
+            return "com.uia.as2.tests.devices.Nexus5Device";
         }
 
-        return "com.uia.as2.devices.Nexus5Device";
+        return "com.uia.as2.tests.devices.Nexus5Device";
     }
 }

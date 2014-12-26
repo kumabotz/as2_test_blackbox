@@ -1,11 +1,11 @@
-package com.uia.as2;
+package com.uia.as2.tests;
 
 import com.android.uiautomator.core.UiCollection;
 import com.android.uiautomator.core.UiObject;
 import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.core.UiSelector;
 
-public class SettingsApp extends App {
+public class TestSettingsApp extends Test {
     @Override
     protected void setUp() throws Exception {
         super.setUp();

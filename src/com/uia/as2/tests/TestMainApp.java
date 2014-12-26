@@ -1,11 +1,11 @@
-package com.uia.as2;
+package com.uia.as2.tests;
 
 import com.android.uiautomator.core.UiObject;
 import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.core.UiScrollable;
 import com.android.uiautomator.core.UiSelector;
 
-public class MainApp extends App {
+public class TestMainApp extends Test {
     public void testSmoke() throws UiObjectNotFoundException {
         // app
         assertTrue("should launch app",
