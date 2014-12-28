@@ -1,5 +1,7 @@
 package com.uia.as2.tests;
 
+import android.os.RemoteException;
+
 import com.android.uiautomator.core.UiObject;
 import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.core.UiSelector;
@@ -28,11 +30,15 @@ public class Test extends UiAutomatorTestCase {
     @Override
     protected void tearDown() throws Exception {
         super.tearDown();
-        mDevice.exitApp();
+        exitApp();
     }
 
-    void launchApp() throws UiObjectNotFoundException {
+    protected void launchApp() throws UiObjectNotFoundException {
         getUiDevice().pressHome();
         new UiObject(new UiSelector().text("AutoSync2 Free")).clickAndWaitForNewWindow();
+    }
+
+    protected void exitApp() throws RemoteException, UiObjectNotFoundException {
+        mDevice.exitApp();
     }
 }
