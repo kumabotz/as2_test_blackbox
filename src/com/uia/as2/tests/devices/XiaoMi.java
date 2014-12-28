@@ -15,10 +15,11 @@ public class XiaoMi extends UiAutomatorTestCase implements Device {
         mUiDevice = UiDevice.getInstance();
     }
 
+    @Override
     public void exitApp() throws RemoteException, UiObjectNotFoundException {
         mUiDevice.pressHome();
         mUiDevice.pressRecentApps();
-        sleep(1000);
+        sleep(500);
         new UiObject(new UiSelector().text("AutoSync2 Free")).swipeUp(40);
     }
 }
