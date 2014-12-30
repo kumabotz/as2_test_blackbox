@@ -5,9 +5,9 @@ public class DeviceFactory {
         if (productName.equals("cancro")) {
             return new XiaoMi();
         } else if (productName.equals("vbox86p")) {
-            return new Nexus5();
+            return new Base();
         }
 
-        return new Nexus5();
+        return new Base();
     }
 }

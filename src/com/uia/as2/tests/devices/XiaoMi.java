@@ -6,20 +6,19 @@ import com.android.uiautomator.core.UiDevice;
 import com.android.uiautomator.core.UiObject;
 import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.core.UiSelector;
-import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
-public class XiaoMi extends UiAutomatorTestCase implements Device {
+public class XiaoMi extends Base implements Device {
     private final UiDevice mUiDevice;
 
     public XiaoMi() {
-        mUiDevice = UiDevice.getInstance();
+        mUiDevice = super.getDevice();
     }
 
     @Override
-    public void exitApp() throws RemoteException, UiObjectNotFoundException {
+    public void exitApp(String appName) throws RemoteException, UiObjectNotFoundException {
         mUiDevice.pressHome();
         mUiDevice.pressRecentApps();
         sleep(500);
-        new UiObject(new UiSelector().text("AutoSync2 Free")).swipeUp(40);
+        new UiObject(new UiSelector().text(appName)).swipeUp(40);
     }
 }
