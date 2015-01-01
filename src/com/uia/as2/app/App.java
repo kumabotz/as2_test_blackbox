@@ -25,6 +25,11 @@ public class App extends UiAutomatorTestCase {
         mDevice.exitApp(mAppName);
     }
 
+    public void relaunch() throws RemoteException, UiObjectNotFoundException {
+        exitApp();
+        launchApp();
+    }
+
     public void launchSettings() throws UiObjectNotFoundException {
         new UiObject(new UiSelector().description("More options")).clickAndWaitForNewWindow();
         new UiObject(new UiSelector().text("Settings")).clickAndWaitForNewWindow();

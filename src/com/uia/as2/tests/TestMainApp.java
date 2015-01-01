@@ -2,8 +2,9 @@ package com.uia.as2.tests;
 
 import com.android.uiautomator.core.UiObject;
 import com.android.uiautomator.core.UiObjectNotFoundException;
-import com.android.uiautomator.core.UiScrollable;
 import com.android.uiautomator.core.UiSelector;
+import com.uia.as2.app.Main;
+import com.uia.as2.app.Option;
 
 public class TestMainApp extends Test {
     public void testSmoke() throws UiObjectNotFoundException {
@@ -28,32 +29,15 @@ public class TestMainApp extends Test {
         assertTrue("should have ad",
                 new UiObject(new UiSelector().resourceId("com.smallmachine.autosync2:id/adView"))
                         .exists());
-    }
 
-    public void testOptions() throws UiObjectNotFoundException {
-        UiScrollable options = new UiScrollable(
-                new UiSelector().className("android.widget.ListView"));
-        assertEquals("should have 3 sync options", options.getChildCount(), 3);
-
-        compareOption(
-                options.getChildByInstance(
-                        new UiSelector().className("android.widget.LinearLayout"), 0), "Mode",
-                "Touch to set a mode to turn on sync");
-        compareOption(
-                options.getChildByInstance(
-                        new UiSelector().className("android.widget.LinearLayout"), 1), "Interval",
-                "Touch to set how frequent to turn on sync");
-        compareOption(
-                options.getChildByInstance(
-                        new UiSelector().className("android.widget.LinearLayout"), 2), "Time",
-                "Touch to schedule a time to turn on sync");
-    }
-
-    private void compareOption(UiObject option, String optionTitle, String optionValue)
-            throws UiObjectNotFoundException {
-        assertTrue("should have option title", option.getChild(new UiSelector().text(optionTitle))
-                .exists());
-        assertTrue("should have option value", option.getChild(new UiSelector().text(optionValue))
-                .exists());
+        // sync options
+        Main main = new Main();
+        assertEquals("should have 3 sync options", main.getList().getChildCount(), 3);
+        assertEquals("should have option description", "Touch to set a mode to turn on sync",
+                new Option(main, "Mode", "None").description());
+        assertEquals("should have option description", "Touch to set how frequent to turn on sync",
+                new Option(main, "Interval", "None").description());
+        assertEquals("should have option description", "Touch to schedule a time to turn on sync",
+                new Option(main, "Time", null).description());
     }
 }

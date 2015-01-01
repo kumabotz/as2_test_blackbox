@@ -11,7 +11,7 @@ public class XiaoMi extends Base implements Device {
     private final UiDevice mUiDevice;
 
     public XiaoMi() {
-        mUiDevice = super.getDevice();
+        mUiDevice = getDevice();
     }
 
     @Override
