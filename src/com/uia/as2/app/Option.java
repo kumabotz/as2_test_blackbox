@@ -7,12 +7,11 @@ import com.android.uiautomator.core.UiSelector;
 
 public class Option {
     private final UiObject mOptionUI;
-    private final String mDefaultOption;
+    private final String mDefaultValue;
 
-    public Option(List list, String value, String defaultOption) throws UiObjectNotFoundException {
-        mOptionUI = list.getList().getChildByText(
-                new UiSelector().className(list.getLayoutClass()), value);
-        mDefaultOption = defaultOption;
+    public Option(List list, String value, String defaultValue) throws UiObjectNotFoundException {
+        mOptionUI = list.getOption(value);
+        mDefaultValue = defaultValue;
     }
 
     public void saveOption(String value) throws UiObjectNotFoundException {
@@ -28,7 +27,7 @@ public class Option {
     }
 
     public void resetOption() throws UiObjectNotFoundException {
-        saveOption(mDefaultOption);
+        saveOption(mDefaultValue);
     }
 
     public String description() throws UiObjectNotFoundException {

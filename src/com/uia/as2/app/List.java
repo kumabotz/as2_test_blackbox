@@ -1,5 +1,7 @@
 package com.uia.as2.app;
 
+import com.android.uiautomator.core.UiObject;
+import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.core.UiScrollable;
 import com.android.uiautomator.core.UiSelector;
 
@@ -17,7 +19,7 @@ public class List {
         return mList;
     }
 
-    public String getLayoutClass() {
-        return mLayoutClass;
+    public UiObject getOption(String value) throws UiObjectNotFoundException {
+        return mList.getChildByText(new UiSelector().className(mLayoutClass), value);
     }
 }
