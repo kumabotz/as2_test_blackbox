@@ -7,7 +7,7 @@ import com.android.uiautomator.core.UiObject;
 import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.core.UiSelector;
 
-public class XiaoMi extends Base implements Device {
+public class XiaoMi extends BaseDevice implements Device {
     private final UiDevice mUiDevice;
 
     public XiaoMi() {

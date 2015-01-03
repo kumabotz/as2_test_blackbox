@@ -6,7 +6,7 @@ import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.uia.as2.app.App;
 import com.uia.as2.app.settings.SyncDuration;
 
-public class TestSyncDuration extends Test {
+public class TestSyncDuration extends BaseTest {
     private App mApp;
     private SyncDuration mSyncDuration;
 

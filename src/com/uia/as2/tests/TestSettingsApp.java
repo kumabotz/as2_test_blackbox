@@ -5,7 +5,7 @@ import com.uia.as2.app.App;
 import com.uia.as2.app.settings.Settings;
 import com.uia.as2.app.settings.SyncDuration;
 
-public class TestSettingsApp extends Test {
+public class TestSettingsApp extends BaseTest {
     private App mApp;
 
     @Override

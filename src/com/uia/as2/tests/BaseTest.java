@@ -4,10 +4,10 @@ import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 import com.uia.as2.app.App;
 import com.uia.as2.devices.DeviceFactory;
 
-public class Test extends UiAutomatorTestCase {
+public class BaseTest extends UiAutomatorTestCase {
     private App mApp;
 
-    public Test() {
+    public BaseTest() {
         try {
             // NOTE: this syntax is needed to make it works and i don't know why
             mApp = new App(DeviceFactory.getDevice(getUiDevice().getInstance().getProductName()),

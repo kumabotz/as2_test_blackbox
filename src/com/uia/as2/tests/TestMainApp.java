@@ -8,7 +8,7 @@ import com.uia.as2.app.main.Main;
 import com.uia.as2.app.main.ModeSync;
 import com.uia.as2.app.main.SchedSync;
 
-public class TestMainApp extends Test {
+public class TestMainApp extends BaseTest {
     public void testSmoke() throws UiObjectNotFoundException {
         assertTrue("should launch app",
                 new UiObject(new UiSelector().packageName("com.smallmachine.autosync2")).exists());

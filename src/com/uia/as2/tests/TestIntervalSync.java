@@ -9,7 +9,7 @@ import com.uia.as2.app.main.IntervalSync;
 // TODO: should be able to update next interval time in airplane mode
 // TODO: should update sub summary text when main summary text updated
 // TODO: should disable sync interval when select none
-public class TestIntervalSync extends Test {
+public class TestIntervalSync extends BaseTest {
     private App mApp;
     private IntervalSync mIntervalSync;
 

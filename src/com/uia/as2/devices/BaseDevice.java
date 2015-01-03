@@ -9,10 +9,10 @@ import com.android.uiautomator.core.UiSelector;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
 // genymotion nexus5
-public class Base extends UiAutomatorTestCase implements Device {
+public class BaseDevice extends UiAutomatorTestCase implements Device {
     private final UiDevice mUiDevice;
 
-    public Base() {
+    public BaseDevice() {
         mUiDevice = UiDevice.getInstance();
     }
 
