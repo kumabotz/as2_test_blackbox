@@ -3,8 +3,10 @@ package com.uia.as2.tests;
 import com.android.uiautomator.core.UiObject;
 import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.core.UiSelector;
-import com.uia.as2.app.Main;
-import com.uia.as2.app.Option;
+import com.uia.as2.app.main.IntervalSync;
+import com.uia.as2.app.main.Main;
+import com.uia.as2.app.main.ModeSync;
+import com.uia.as2.app.main.SchedSync;
 
 public class TestMainApp extends Test {
     public void testSmoke() throws UiObjectNotFoundException {
@@ -31,13 +33,12 @@ public class TestMainApp extends Test {
                         .exists());
 
         // sync options
-        Main main = new Main();
-        assertEquals("should have 3 sync options", main.getList().getChildCount(), 3);
+        assertEquals("should have 3 sync options", new Main().getList().getChildCount(), 3);
         assertEquals("should have option description", "Touch to set a mode to turn on sync",
-                new Option(main, "Mode", "None").description());
+                new ModeSync().description());
         assertEquals("should have option description", "Touch to set how frequent to turn on sync",
-                new Option(main, "Interval", "None").description());
+                new IntervalSync().description());
         assertEquals("should have option description", "Touch to schedule a time to turn on sync",
-                new Option(main, "Time", null).description());
+                new SchedSync().description());
     }
 }

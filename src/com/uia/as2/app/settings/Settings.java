@@ -1,7 +1,8 @@
-package com.uia.as2.app;
+package com.uia.as2.app.settings;
 
 import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.core.UiSelector;
+import com.uia.as2.app.List;
 
 public class Settings extends List {
     public Settings() {

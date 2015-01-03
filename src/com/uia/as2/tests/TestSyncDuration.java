@@ -4,30 +4,29 @@ import android.os.RemoteException;
 
 import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.uia.as2.app.App;
-import com.uia.as2.app.Option;
-import com.uia.as2.app.Settings;
+import com.uia.as2.app.settings.SyncDuration;
 
 public class TestSyncDuration extends Test {
     private App mApp;
-    private Option mSyncDuration;
+    private SyncDuration mSyncDuration;
 
     @Override
     protected void setUp() throws Exception {
         super.setUp();
         mApp = getApp();
         mApp.launchSettings();
-        mSyncDuration = new Option(new Settings(), "Sync Duration", "1 minute");
+        mSyncDuration = new SyncDuration();
     }
 
     @Override
     protected void tearDown() throws Exception {
-        mSyncDuration.resetOption();
+        mSyncDuration.reset();
         super.tearDown();
     }
 
     public void testSaveSyncDuration() throws UiObjectNotFoundException, RemoteException {
         String value = "5 seconds";
-        mSyncDuration.saveOption(value, true);
+        mSyncDuration.save(value);
         relaunchSettings();
         assertEquals("should saved sync duration value", value, mSyncDuration.description());
     }

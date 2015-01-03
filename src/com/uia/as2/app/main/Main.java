@@ -1,4 +1,6 @@
-package com.uia.as2.app;
+package com.uia.as2.app.main;
+
+import com.uia.as2.app.List;
 
 public class Main extends List {
     public Main() {
