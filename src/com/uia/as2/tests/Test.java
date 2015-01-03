@@ -2,7 +2,7 @@ package com.uia.as2.tests;
 
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 import com.uia.as2.app.App;
-import com.uia.as2.tests.devices.DeviceFactory;
+import com.uia.as2.devices.DeviceFactory;
 
 public class Test extends UiAutomatorTestCase {
     private App mApp;

@@ -6,7 +6,7 @@ import com.android.uiautomator.core.UiObject;
 import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.core.UiSelector;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
-import com.uia.as2.tests.devices.Device;
+import com.uia.as2.devices.Device;
 
 public class App extends UiAutomatorTestCase {
     private final Device mDevice;

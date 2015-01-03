@@ -1,4 +1,4 @@
-package com.uia.as2.tests.devices;
+package com.uia.as2.devices;
 
 public class DeviceFactory {
     public static Device getDevice(String productName) {

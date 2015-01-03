@@ -1,4 +1,4 @@
-package com.uia.as2.tests.devices;
+package com.uia.as2.devices;
 
 import android.os.RemoteException;
 
