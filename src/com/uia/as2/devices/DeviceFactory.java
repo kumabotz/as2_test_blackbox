@@ -7,6 +7,7 @@ public class DeviceFactory {
         } else if (productName.equals("vbox86p")) {
             return new BaseDevice();
         }
+        // TODO: support Nexus 6
 
         return new BaseDevice();
     }
